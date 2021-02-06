@@ -75,9 +75,13 @@ $ docker-compose -f docker-compose.yml -f dev-gpu.yml up --build
 
 (Tensorflow)
 ```bash
-docker-compose -f docker-compose-tf.yml -f up --build
+docker-compose -f docker-compose-tf.yml build
 ```
 
+(Trax)
+```bash
+docker-compose -f docker-compose-trax.yml build
+```
 
 
 
