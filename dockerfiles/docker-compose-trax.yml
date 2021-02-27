@@ -5,7 +5,7 @@ services:
             context: ""
             dockerfile: Dockerfile-trax
         container_name : vjai_paper_coding_trax
-        image: "vjai/trax:gpu"
+        image: "vjai/trax136:gpu"
         runtime: nvidia
         ports:
             - "8889:8888"
