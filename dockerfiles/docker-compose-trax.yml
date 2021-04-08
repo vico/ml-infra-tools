@@ -10,7 +10,7 @@ services:
         ports:
             - "8889:8888"
         volumes:
-            - "..:/tf"
+            - ".:/tf"
             - "/tmp:/tmp"
         ipc: host
         user: vjai

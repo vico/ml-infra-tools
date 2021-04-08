@@ -9,7 +9,7 @@ services:
         ports:
             - "8889:8889"
         volumes:
-            - "..:/data"
+            - ".:/data"
         ipc: host
         user: vjai
         working_dir: /data
