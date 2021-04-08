@@ -1,0 +1,20 @@
+version: '3'
+services:
+    python:
+        build:
+            context: ""
+            dockerfile: Dockerfile-trax-latest
+        container_name : trax_latest
+        image: "cuong/trax:latest"
+        runtime: nvidia
+        ports:
+            - "8889:8888"
+        volumes:
+            - ".:/tf"
+            - "/tmp:/tmp"
+        ipc: host
+        user: cuong
+        working_dir: /tf
+        tty: true
+        command: jupyter lab --ip=0.0.0.0
+
