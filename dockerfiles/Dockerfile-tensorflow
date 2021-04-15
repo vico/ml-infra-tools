@@ -2,7 +2,7 @@ FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 RUN useradd -ms /bin/bash vjai && apt-get install -y wget && \
   pip install --upgrade pip && \
-  pip install jupyterlab==3.0.4 && \
-  pip install scipy==1.5.4
+  pip install jupyterlab==3.0.4 && pip install -U scikit-learn && \
+  pip install scipy==1.5.4 && pip install tensorflow_data_validation[visualization]
 
 ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
