@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN python3 -m pip install --upgrade pip && \
   su - vjai -c "python3 -m pip install --upgrade --user jupyterlab" && \
   python3 -m pip install scipy ipywidgets gensim altair matplotlib pydot scikit-learn ipywidgets gensim altair matplotlib pydot
-RUN python3 -m pip install tensorflow-gpu tensorflow_data_validation[visualization] && \
+RUN python3 -m pip install tensorflow-gpu  apache-beam[interactive] tensorflow_data_validation[visualization] && \
     python3 -m pip install mecab-python3==0.996.6rc2 && \
     sed -i -E "s#dicdir =.*#dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic#" /etc/mecabrc && \
     cd /usr/local/cuda/lib64 && ln libcusolver.so.11 libcusolver.so.10
