@@ -1,0 +1,22 @@
+version: '3'
+services:
+    python:
+        build:
+            context: ""
+            dockerfile: Dockerfile-pytorch-cuda10_2
+        container_name : pytorch_cuda102
+        image: "cuong/pytorch_cuda102:1.8.1"
+        runtime: nvidia
+        ports:
+            - "8890:8888"
+        volumes:
+            - ".:/tf"
+            - "/tmp:/tmp"
+        ipc: host
+        user: vjai
+        working_dir: /tf
+        tty: true
+        environment:
+            - JUPYTERLAB_SETTINGS_DIR=/tf/user-settings
+            - JUPYTERLAB_WORKSPACES_DIR=/tf/workspaces
+        command: jupyter lab --ip=0.0.0.0
