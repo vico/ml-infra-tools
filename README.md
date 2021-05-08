@@ -96,3 +96,10 @@ docker-compose -f docker-compose-trax.yml build
     torch.cuda.current_device()
 
     ```
+
+# Run BERT notebook with PyTorch
+
+```bash
+cd notebooks
+dokcer-compose -f docker-compose-pytorch.yml up
+```
