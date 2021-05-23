@@ -1,8 +1,10 @@
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
+LABEL maintainer="tranvinhcuong@gmail.com"
+ENV REFRESHED_AT 2021-05-22
 
 ENV PATH=/usr/local/nvidia/bin:/home/vjai/.local/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
          curl \
          wget \
          ca-certificates \
