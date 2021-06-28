@@ -1,0 +1,19 @@
+version: '3'
+services:
+    python:
+        build:
+            context: ""
+            dockerfile: Dockerfile-flax-latest-cp38
+        container_name : flax_latest_cp38
+        image: "cuong/flax:cp38latest"
+        runtime: nvidia
+        ports:
+            - "8989:8888"
+        volumes:
+            - ".:/tf"
+            - "/tmp:/tmp"
+        ipc: host
+        user: cuong
+        working_dir: /tf
+        tty: true
+        command: jupyter lab --ip=0.0.0.0
