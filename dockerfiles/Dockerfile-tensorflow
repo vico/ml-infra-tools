@@ -1,6 +1,6 @@
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 LABEL maintainer="tranvinhcuong@gmail.com"
-ENV REFRESHED_AT 2021-05-22
+ENV REFRESHED_AT 2021-06-29
 
 ENV PATH=/usr/local/nvidia/bin:/home/vjai/.local/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -21,10 +21,12 @@ RUN apt-get install -y --no-install-recommends sudo && \
 RUN su - vjai -c "python3 -m pip install --upgrade pip" && \
   su - vjai -c "python3 -m pip install --upgrade --user jupyterlab" && \
   su - vjai -c "python3 -m pip install scipy ipywidgets gensim altair matplotlib pydot scikit-learn ipywidgets gensim altair matplotlib pydot seaborn"
-RUN su - vjai -c "python3 -m pip install tensorflow-gpu  apache-beam[interactive] tensorflow_data_validation[visualization] tensorflow-transform tfx transformers fugashi[unidic-lite] ipadic"  && \
+RUN su - vjai -c "python3 -m pip install tensorflow-gpu transformers fugashi[unidic-lite] ipadic"  && \
     su - vjai -c "python3 -m pip install tensorflow_addons" && \
+    su - vjai -c "python3 -m pip install tensorflow-text" && \
     su - vjai -c "python3 -m pip install mecab-python3==0.996.6rc2" && \
     sed -i -E "s#dicdir =.*#dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic#" /etc/mecabrc && \
+    su - vjai -c "python3 -m pip install transformers fugashi[unidic-lite] ipadic" && \
     cd /usr/local/cuda/lib64 && ln libcusolver.so.11 libcusolver.so.10
 
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
