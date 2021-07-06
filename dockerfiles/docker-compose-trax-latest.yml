@@ -3,9 +3,9 @@ services:
     python:
         build:
             context: ""
-            dockerfile: Dockerfile-trax-latest
-        container_name : trax_latest
-        image: "cuong/trax:latest"
+            dockerfile: Dockerfile-trax-latest-cp38
+        container_name : trax_latest_cp38
+        image: "cuong/trax:cp38latest"
         runtime: nvidia
         ports:
             - "8889:8888"

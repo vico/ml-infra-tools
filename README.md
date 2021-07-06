@@ -16,7 +16,7 @@ How to know docker, Nvidia Driver, Nvidia Docker have been installed correctly
 docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
 
-The output will be somethings like
+The output will be some things like
 
 ```
 +-----------------------------------------------------------------------------+

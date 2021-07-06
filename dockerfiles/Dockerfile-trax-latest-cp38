@@ -1,6 +1,6 @@
-FROM nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:11.2.0-cudnn8-devel-ubuntu20.04
 LABEL maintainer="tranvinhcuong@gmail.com"
-ENV REFRESHED_AT 2021-05-23
+ENV REFRESHED_AT 2021-07-06
 
 ENV PATH=/usr/local/cuda/bin:/home/vjai/.local/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64/
